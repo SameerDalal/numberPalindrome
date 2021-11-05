@@ -13,41 +13,44 @@ public class palindrome {
     public static void splitInput(){
         Scanner scan = new Scanner(System.in);
         int input = scan.nextInt();
-        ArrayList<Integer> arrayReversed = new ArrayList<Integer>();
+        ArrayList<Integer> listReversed = new ArrayList<Integer>();
         int counter1 = 0;
         while (input>0){
-            arrayReversed.add(input %10);
+            listReversed.add(input %10);
             input/=10;
             counter1++;
         }
 
         /*
         for (int y = 0; y<counter1; y++){
-            System.out.print(arrayReversed.get(y) + "  ");
+            System.out.print(listReversed.get(y) + "  ");
+             // prints the elements of ArrayList 'listReversed'
         }
          */
-        ArrayList<Integer> arrayNotReversed = new ArrayList<Integer>();
+        ArrayList<Integer> list = new ArrayList<Integer>();
         for (int r = counter1-1; r>=0; r--){
-            arrayNotReversed.add(arrayReversed.get(r));
+            list.add(listReversed.get(r));
         }
+
 
         /*
         for (int u = 0; u<counter1; u++) {
-            System.out.print(arrayNotReversed.get(u));
+            System.out.print(list.get(u));
+            // prints the elements of ArrayList 'list'
         }
          */
 
 
-        if (1==1){
-            int counter2 = 0;
-            while (arrayReversed.get((arrayReversed.size()-counter2)-1) == arrayNotReversed.get(counter2)){
-                counter2++;
-                if (counter2 >= arrayNotReversed.size()){
-                    break;
-                } else {
-                    System.out.println("True");
-                }
+        int o = 0;
+        for (int y = 0; y<list.size(); y++){
+            if(listReversed.get(y) == list.get(y)){
+                o++;
             }
+        }
+        if (o == list.size()){
+            System.out.println("Your number is a palindrome!!!");
+        } else {
+            System.out.println("Your number is not a palindrome!");
         }
     }
 }
