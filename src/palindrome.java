@@ -12,11 +12,11 @@ public class palindrome {
 
     public static void splitInput(){
         Scanner scan = new Scanner(System.in);
-        int input = scan.nextInt();
-        ArrayList<Integer> listReversed = new ArrayList<Integer>();
+        long input = scan.nextLong();
+        ArrayList<Long> listReversed = new ArrayList<Long>();
         int counter1 = 0;
         while (input>0){
-            listReversed.add(input %10);
+            listReversed.add(input % 10);
             input/=10;
             counter1++;
         }
@@ -27,7 +27,7 @@ public class palindrome {
              // prints the elements of ArrayList 'listReversed'
         }
          */
-        ArrayList<Integer> list = new ArrayList<Integer>();
+        ArrayList<Long> list = new ArrayList<Long>();
         for (int r = counter1-1; r>=0; r--){
             list.add(listReversed.get(r));
         }
